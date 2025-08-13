@@ -1,1 +1,74 @@
-
+<html>  
+<title>student Registration Form</title>
+ <header  >Student Registration Form</header> 
+<script>function validateform(){   
+var name=document.myform.name.value;   
+var num=document.myform.num.value;   
+var Add=document.myform.Add.value; 
+var mno=document.myform.mno.value; 
+var email=document.myform.email.value; 
+var atposition=email.indexOf("@");   
+var dotposition=email.lastIndexOf("."); 
+if(isNaN(num)){   
+alert("Enter numeric value only"); 
+} 
+else if (name==null || name==""){   
+alert("Name can't be blank");   
+return false;   
+} else if(Add==null || Add.includes(":")){ 
+alert("Please enter valid address!!! Don't include : in address."); 
+return false; 
+}  
+{ 
+else if(mno==null || mno.length<10) 
+alert("Please enter valid mobile number"); 
+return false; 
+}   
+  else if(atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){   
+  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);   
+  return false;   
+  }   
+   else{ 
+    return true; 
+}}   
+</script>  
+<body> 
+  <form name="myform" method="post" action="abc.jsp" onsubmit="return validateform()" >   
+Roll:<input type="text" name="num"><span id="numloc"></span><br/> 
+Name: <input type="text" name="name"><br/>  
+Address: <input type="text" name="Add"></br> 
+Mobile Number: <input type="text" name="mno"><span id="numloc"></span></br> 
+Email Address: <input type="text" name="email"></br> 
+<input type="submit" value="register" style="text-align:center; font-size:30px; background-color:#1288ab; 
+color:white; padding:10px;">   
+</form>  
+  <style> 
+     header{ 
+       text-align:center; 
+        padding:20px; 
+       font-size: 50px; 
+        color:white; 
+    } 
+    body{ 
+       background-image:url("image.jpg"); 
+width:100%; 
+       font-size:30px; 
+       color:white; 
+        } 
+    form{ 
+        padding:30px; 
+  input[type="text"], 
+        input[type="email"], 
+        input[type="password"], 
+        textarea, 
+        input[type="date"] { 
+            width: calc(100% - 40px); 
+            padding: 8px; 
+            margin-bottom: 10px; 
+            box-sizing: border-box; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+        } 
+ </style> 
+  </body> 
+</html>
